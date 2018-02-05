@@ -1,12 +1,8 @@
-* {
-	box-sizing: border-box;
-}
-
-.signup-page .search-create-page #maps {
-	display: none;
-}
-
-h1 {
-	font-size: 12;
+.login-form {
+	width: 400px;
+	padding: 40px;
+	border-radius: 3px;
+	background: white;
+	margin: 0 auto;
 }
 

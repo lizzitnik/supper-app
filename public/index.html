@@ -10,6 +10,56 @@
           integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
           crossorigin="anonymous">   
     </script>
+    <style>
+* {
+	box-sizing: border-box;
+}
+
+.search-create-page, #map {
+	display: none;
+}
+
+.login-form, .signup-form {
+	width: 400px;
+	padding: 40px;
+	border-radius: 3px;
+	background: white;
+	margin: 0 auto;
+	text-align: left;
+}
+
+h2 {
+	text-align: center;
+}
+
+.login-form input, .signup-form input {
+	display: block;
+	width: 100%;
+	height: auto;
+  	font-size: 15px;
+  	text-align: left;
+  	padding: 5px;
+  	border: 2px solid #e7e7e7;
+  	border-radius: 3px;
+  	background: #fcfcfc;
+  	margin: 10px auto 10px;
+  	transition: opacity 0.4s;
+}
+
+.login-form button, .signup-form button {
+	margin: 10px auto 20px;
+	height: auto;
+	font-size: 18px;
+	text-align: center;
+	border: 1px grey solid;
+	cursor: pointer;
+	margin-bottom: 0;
+	border-radius: 3px;
+}
+
+
+
+    </style>
   </head>
 
   <body>
@@ -19,10 +69,10 @@
   			<form role='form' action='/user' method='get' class='login-form'>
   				<h2>Login</h2>
 	  			<label for='username'>Username:</label>
-	  			<input id='username' type='text' required>
+	  			<input id='username' type='text'>
 	  			<label for='password'>Password:</label>
-	  			<input id='password' type='password' required>
-	  			<button type='submit'>Login</button>
+	  			<input id='password' type='password'>
+	  			<button id='login-button' type='submit'>Login</button>
   			</form>
   			<p>New to Supper? <a href='/signup'>Sign up</a></p>
   		</div>
@@ -30,15 +80,15 @@
   			<form role='form' action='/user' method='post' class='signup-form'>
   				<h2>Sign up</h2>
   				<label for='name'>Name:</label>
-	  			<input id='name' type='text' placeholder="Liz" required>
+	  			<input id='name' type='text' required>
 	  			<label for='email'>Email:</label>
-	  			<input id='email' type='email' placeholder='lizaroo4@gmail.com' required>
+	  			<input id='email' type='email' required>
 
 	  			<label for='new-username'>Username:</label>
-	  			<input id='new-username' type='text' placeholder="lizsmith" required>
+	  			<input id='new-username' type='text' required>
 	  			<label for='new-password'>Password:</label>
-	  			<input id='new-password' type='password' placeholder="liZard123" required>
-	  			<button type='submit'>Signup</button>
+	  			<input id='new-password' type='password' required>
+	  			<button id='signup-button' type='submit'>Signup</button>
   			</form>
   		</div>
   		<div class='search-create-page'>
@@ -61,7 +111,6 @@
 
 
 
-    <h3>My Google Maps Demo</h3>
     <div id="map"></div>
     <script src='client.js'></script>
     <script async defer

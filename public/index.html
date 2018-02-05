@@ -1,14 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang='en'>
   <head>
-    <style>
-       #map {
-        height: 400px;
-        width: 100%;
-       }
-    </style>
+  	<meta charset="utf-8">
+  	<meta name='description' content='Supper app'>
+  	<title>Supper App</title>
+  	<link rel="stylesheet" href="main.css" type='text/css'>
+  	<script
+          src="https://code.jquery.com/jquery-3.2.1.min.js"
+          integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+          crossorigin="anonymous">   
+    </script>
   </head>
+
   <body>
+  	<main role='main' class='supper-app'>
+  		<h1>Supper</h1>
+  		<div class='login-page'>
+  			<form role='form' action='/user' method='get' class='login-form'>
+  				<h2>Login</h2>
+	  			<label for='username'>Username:</label>
+	  			<input id='username' type='text' required>
+	  			<label for='password'>Password:</label>
+	  			<input id='password' type='password' required>
+	  			<button type='submit'>Login</button>
+  			</form>
+  			<p>New to Supper? <a href='/signup'>Sign up</a></p>
+  		</div>
+  		<div class='signup-page'>
+  			<form role='form' action='/user' method='post' class='signup-form'>
+  				<h2>Sign up</h2>
+  				<label for='name'>Name:</label>
+	  			<input id='name' type='text' placeholder="Liz" required>
+	  			<label for='email'>Email:</label>
+	  			<input id='email' type='email' placeholder='lizaroo4@gmail.com' required>
+
+	  			<label for='new-username'>Username:</label>
+	  			<input id='new-username' type='text' placeholder="lizsmith" required>
+	  			<label for='new-password'>Password:</label>
+	  			<input id='new-password' type='password' placeholder="liZard123" required>
+	  			<button type='submit'>Signup</button>
+  			</form>
+  		</div>
+  		<div class='search-create-page'>
+  			<h2>Where would you like to gather?</h2>
+  			<form role='form' action='/' method='post' class='search-create-form'>
+  				<fieldset>
+		  			<input type='radio' id='current-location' checked>
+		  			<label for='current-location'>current location</label>
+		  			<label for='choose-local'></label>
+		  			<input type='text' id='choose-local' placeholder="Berlin, Germany">
+	  			</fieldset>
+	  			<button id='search-button' type='submit'>Search</button>
+	  			<button id='create-button' type='submit'>Create</button>
+  			</form>
+  		</div>
+  		<div class='search-page'></div>
+  		<div class='search-map-page'></div>
+  		<div class='create-page'></div>
+  	</main>
+
+
+
     <h3>My Google Maps Demo</h3>
     <div id="map"></div>
     <script src='client.js'></script>

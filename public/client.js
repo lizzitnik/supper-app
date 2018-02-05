@@ -2,35 +2,6 @@
 // var service;
 // var infowindow;
 
-// var MOCK_GATHERINGS {
-//   'gatherings': [
-//     {
-//       'id': '111',
-//       'host': 'John Smith',
-//       'numberAttending': '5',
-//       'restaurant': 'Joe\'s Crab Shack'
-//     },
-//     {
-//       'id': '222',
-//       'host': 'Jane Smithers',
-//       'numberAttending': '2',
-//       'restaurant': 'McDonalds'
-//     },
-//     {
-//       'id': '333',
-//       'host': 'Will Beans',
-//       'numberAttending': '10',
-//       'restaurant': 'KFC'
-//     },
-//     {
-//       'id': '444',
-//       'host': 'Tom Hardy',
-//       'numberAttending': '4',
-//       'restaurant': 'Starbucks'
-//     }
-//   ]
-// };
-
 // function getRecentGatherings(callbackFn) {
 //     setTimeout(function(){ callbackFn(MOCK_GATHERINGS)}, 100);
 // }

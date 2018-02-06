@@ -4,8 +4,8 @@ const mongoose = require('mongoose');
 
 const gatheringSchema = mongoose.Schema({
 	host: {type: String, required: true},
-	numberAttending: {type: Number, required: true},
-	date: {type: Date, required: true},
+	numberAttending: {type: Number, required: false},
+	date: {type: String, required: false},
 	restaurant: {
 		name: String,
 		address: String,

@@ -5,57 +5,264 @@
   	<meta name='description' content='Supper app'>
   	<title>Supper App</title>
   	<link rel="stylesheet" href="main.css" type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
   	<script
           src="https://code.jquery.com/jquery-3.2.1.min.js"
           integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
           crossorigin="anonymous">   
     </script>
-    <style>
-* {
-	box-sizing: border-box;
+    <style>  
+
+h1 {
+  font-family: adlery;
+  text-align: center;
+  color: white;
+  font-size: 120px;
+  margin-bottom: 120px;
 }
 
-.search-create-page, #map {
-	display: none;
+body{
+  margin:0;
+  color:#6a6f8c;
+  background: linear-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0.9)), url(https://media.glamour.com/photos/56959a2c93ef4b09520d6401/master/pass/home-2015-11-thanksgiving-dinner-stocksy-main.jpg) no-repeat center;
+  font:600 16px/18px 'Open Sans',sans-serif;
 }
 
-.login-form, .signup-form {
-	width: 400px;
-	padding: 40px;
-	border-radius: 3px;
-	background: white;
-	margin: 0 auto;
-	text-align: left;
+*,:after,:before{-webkit-box-sizing:border-box;box-sizing:border-box}
+
+.clearfix:after,.clearfix:before{content:'';display:table}
+.clearfix:after{clear:both;display:block}
+a{color:inherit;text-decoration:none}
+
+.login-wrap{
+  width:100%;
+  margin:auto;
+  max-width:525px;
+  min-height:653px;
+  position:relative;
+  -webkit-box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+          box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
+}
+.login-html{
+  width:100%;
+  height:100%;
+  position:absolute;
+  padding:90px 70px 50px 70px;
+  background:rgba(40,57,101,.9);
+}
+.login-html .sign-in-htm,
+.login-html .sign-up-htm{
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  position:absolute;
+  -webkit-transform:rotateY(180deg);
+          transform:rotateY(180deg);
+  -webkit-backface-visibility:hidden;
+          backface-visibility:hidden;
+  -webkit-transition:all .4s linear;
+  transition:all .4s linear;
+}
+.login-html .sign-in,
+.login-html .sign-up,
+.login-form .group .check{
+  display:none;
+}
+.login-html .tab,
+.login-form .group .label,
+.login-form .group .button{
+  text-transform:uppercase;
+}
+.login-html .tab{
+  font-size:22px;
+  margin-right:15px;
+  padding-bottom:5px;
+  margin:0 15px 10px 0;
+  display:inline-block;
+  border-bottom:2px solid transparent;
+}
+.login-html .sign-in:checked + .tab,
+.login-html .sign-up:checked + .tab{
+  color:#fff;
+  border-color:#1161ee;
+}
+.login-form{
+  min-height:345px;
+  position:relative;
+  -webkit-perspective:1000px;
+          perspective:1000px;
+  -webkit-transform-style:preserve-3d;
+          transform-style:preserve-3d;
+}
+.login-form .group{
+  margin-bottom:15px;
+}
+.login-form .group .label,
+.login-form .group .input,
+.login-form .group .button{
+  width:100%;
+  color:#fff;
+  display:block;
+}
+.login-form .group .input,
+.login-form .group .button{
+  border:none;
+  padding:15px 20px;
+  border-radius:25px;
+  background:rgba(255,255,255,.1);
+}
+.login-form .group input[data-type="password"]{
+  text-security:circle;
+  -webkit-text-security:circle;
+}
+.login-form .group .label{
+  color:#aaa;
+  font-size:12px;
+}
+.login-form .group .button{
+  background:#1161ee;
+}
+.login-form .group label .icon{
+  width:15px;
+  height:15px;
+  border-radius:2px;
+  position:relative;
+  display:inline-block;
+  background:rgba(255,255,255,.1);
+}
+.login-form .group label .icon:before,
+.login-form .group label .icon:after{
+  content:'';
+  width:10px;
+  height:2px;
+  background:#fff;
+  position:absolute;
+  -webkit-transition:all .2s ease-in-out 0s;
+  transition:all .2s ease-in-out 0s;
+}
+.login-form .group label .icon:before{
+  left:3px;
+  width:5px;
+  bottom:6px;
+  -webkit-transform:scale(0) rotate(0);
+          transform:scale(0) rotate(0);
+}
+.login-form .group label .icon:after{
+  top:6px;
+  right:0;
+  -webkit-transform:scale(0) rotate(0);
+          transform:scale(0) rotate(0);
+}
+.login-form .group .check:checked + label{
+  color:#fff;
+}
+.login-form .group .check:checked + label .icon{
+  background:#1161ee;
+}
+.login-form .group .check:checked + label .icon:before{
+  -webkit-transform:scale(1) rotate(45deg);
+          transform:scale(1) rotate(45deg);
+}
+.login-form .group .check:checked + label .icon:after{
+  -webkit-transform:scale(1) rotate(-45deg);
+          transform:scale(1) rotate(-45deg);
+}
+.login-html .sign-in:checked + .tab + .sign-up + .tab + .login-form .sign-in-htm{
+  -webkit-transform:rotate(0);
+          transform:rotate(0);
+}
+.login-html .sign-up:checked + .tab + .login-form .sign-up-htm{
+  -webkit-transform:rotate(0);
+          transform:rotate(0);
 }
 
-h2 {
-	text-align: center;
+.hr{
+  height:2px;
+  margin:40px 0 30px 0;
+  background:rgba(255,255,255,.2);
+}
+.foot-lnk{
+  text-align:center;
 }
 
-.login-form input, .signup-form input {
-	display: block;
-	width: 100%;
-	height: auto;
-  	font-size: 15px;
-  	text-align: left;
-  	padding: 5px;
-  	border: 2px solid #e7e7e7;
-  	border-radius: 3px;
-  	background: #fcfcfc;
-  	margin: 10px auto 10px;
-  	transition: opacity 0.4s;
+
+.landing-page {
+  display: none;
+  text-align: center;
+  margin: 0, auto;
+  background: rgba(40,57,101,.65);
+  color: white;
+  width: 750px;
+  height: 350px;
+  padding-top: 20px;
 }
 
-.login-form button, .signup-form button {
-	margin: 10px auto 20px;
-	height: auto;
-	font-size: 18px;
-	text-align: center;
-	border: 1px grey solid;
-	cursor: pointer;
-	margin-bottom: 0;
-	border-radius: 3px;
+.landing-page h2 {
+  font-size: 40px;
 }
+
+
+.landing-page, .button-container {
+  max-width: 1000px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
+}
+
+.button-container::before,
+.button-container::after {
+  display: table;
+  content: '';
+}
+
+.col-6 {
+  position: relative;
+  float: left;
+  padding-left: 1.04166666%;
+  padding-right: 1.04166666%;
+  width: 100%;
+}
+
+.search-col {
+  text-align: right;
+}
+
+.create-col {
+  text-align: left;
+}
+
+#choose-local {
+  margin-top: 15px;
+  font-size: 20px;
+  width: 400px;
+  height: 100%;
+  padding: 5px 10px;
+  color: white;
+  background: rgba(19, 35, 47, 0.9);
+  border: 1px solid #a0b3b0;
+  border-radius: 2px;
+}
+
+.search-button, .create-button {
+  margin-top: 15px;
+  background: #1161ee;
+  text-transform: uppercase;
+  width:100%;
+  color:#fff;
+  display:block;
+  border:none;
+  padding:15px 20px;
+  border-radius:25px;
+  opacity: 0.6;
+}
+
+@media only screen and (min-width: 640px) {
+  .col-6 {
+    width: 50%;
+  }
+}
+
 
 
 
@@ -64,49 +271,95 @@ h2 {
 
   <body>
   	<main role='main' class='supper-app'>
-  		<h1>Supper</h1>
-  		<div class='login-page'>
-  			<form role='form' action='/user' method='get' class='login-form'>
-  				<h2>Login</h2>
-	  			<label for='username'>Username:</label>
-	  			<input id='username' type='text'>
-	  			<label for='password'>Password:</label>
-	  			<input id='password' type='password'>
-	  			<button id='login-button' type='submit'>Login</button>
-  			</form>
-  			<p>New to Supper? <a href='/signup'>Sign up</a></p>
-  		</div>
-  		<div class='signup-page'>
-  			<form role='form' action='/user' method='post' class='signup-form'>
-  				<h2>Sign up</h2>
-  				<label for='name'>Name:</label>
-	  			<input id='name' type='text' required>
-	  			<label for='email'>Email:</label>
-	  			<input id='email' type='email' required>
+      <h1>SUPPER</h1>
 
-	  			<label for='new-username'>Username:</label>
-	  			<input id='new-username' type='text' required>
-	  			<label for='new-password'>Password:</label>
-	  			<input id='new-password' type='password' required>
-	  			<button id='signup-button' type='submit'>Signup</button>
-  			</form>
-  		</div>
-  		<div class='search-create-page'>
+  		<div class="login-wrap">
+        <div class="login-html">
+          <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+          <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+          <div class="login-form">
+            <div class="sign-in-htm">
+              <div class="group">
+                <label for="user" class="label">Username</label>
+                <input id="user" type="text" class="input">
+              </div>
+              <div class="group">
+                <label for="pass" class="label">Password</label>
+                <input id="pass" type="password" class="input" data-type="password">
+              </div>
+              <div class="group">
+                <input id="check" type="checkbox" class="check" checked>
+                <label for="check"><span class="icon"></span> Keep me Signed in</label>
+              </div>
+              <div class="group">
+                <input type="submit" class="button" value="Sign In">
+              </div>
+              <div class="hr"></div>
+              <div class="foot-lnk">
+                <a href="#forgot">Forgot Password?</a>
+              </div>
+            </div>
+            <div class="sign-up-htm">
+              <div class="group">
+                <label for="user" class="label">Username</label>
+                <input id="user" type="text" class="input">
+              </div>
+              <div class="group">
+                <label for="pass" class="label">Password</label>
+                <input id="pass" type="password" class="input" data-type="password">
+              </div>
+              <div class="group">
+                <label for="pass" class="label">Repeat Password</label>
+                <input id="pass" type="password" class="input" data-type="password">
+              </div>
+              <div class="group">
+                <label for="pass" class="label">Email Address</label>
+                <input id="pass" type="text" class="input">
+              </div>
+              <div class="group">
+                <input type="submit" class="button" value="Sign Up">
+              </div>
+              <div class="hr"></div>
+              <div class="foot-lnk">
+                <label for="tab-1">Already Member?</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+  		<div class='landing-page'>
   			<h2>Where would you like to gather?</h2>
-  			<form role='form' action='/' method='post' class='search-create-form'>
-  				<fieldset>
-		  			<input type='radio' id='current-location' checked>
-		  			<label for='current-location'>current location</label>
-		  			<label for='choose-local'></label>
-		  			<input type='text' id='choose-local' placeholder="Berlin, Germany">
-	  			</fieldset>
-	  			<button id='search-button' type='submit'>Search</button>
-	  			<button id='create-button' type='submit'>Create</button>
-  			</form>
+  			<form role='form' action='/' method='post' class='landing-page-form'>
+		  		<input type='radio' id='current-location'>
+		  		<label for='current-location'>Current Location</label><br>
+		  		<label for='choose-local'></label>
+		  		<input type='text' id='choose-local' placeholder="Berlin, Germany">
+        </form>
+        <div class='button-container'>
+          <div class='search-col col-6'>
+            <form action='/' method='post' class='search-form'>
+    	  			<button class='search-button button-block' type='submit'>Search</button>
+            </form>  
+              <p>Search through gatherings in your area and pick the one best suited for you!</p>
+          </div>
+
+          <div class='create-col col-6'>
+            <form action='/' method='post' class='create-form'>
+    	  			<button class='create-button button-block' type='submit'>Create</button>
+            </form>
+              <p>Create a new gathering and let fellow travellers come to you!</p>
+          </div>
+        </div>
   		</div>
+
   		<div class='search-page'></div>
+
   		<div class='search-map-page'></div>
+
   		<div class='create-page'></div>
+
   	</main>
 
 
